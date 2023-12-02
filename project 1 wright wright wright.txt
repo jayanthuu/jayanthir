@@ -1,0 +1,160 @@
+
+#include<iostream>
+#include<string>
+#include<cmath>
+class Bankdetails
+{
+public:
+  long int accountno;
+    std::string name;
+  int withdraw;
+  int deposite;
+  int balance;
+    virtual void bank()
+ {
+    std::cout << "finding account details"<<"\n"<<"\n";
+  }
+  };
+  class Bank:public Bankdetails{
+      public:
+   Bank(long int a, const std::string & b, int c, int d, int e)
+  {
+    accountno = a;
+    name = b;
+    withdraw = c;
+    deposite = d;
+    balance = e;
+  }
+  
+   void bank() override {
+      
+  //std::cout << "Account details  " << "\n" << "\n" << "\n";
+  std::cout << "accountno:" << accountno << "\n";
+  std::cout << "name:" << name << "\n";
+  std::cout << "deposite:" << deposite << "\n";
+  std::cout << "withdraw:" << withdraw << "\n";
+  std::cout << "balance:" << balance << "\n" << "\n" << "\n";
+
+}
+};
+
+
+class Details:public Bankdetails{
+  public:  
+Details(long int a1, const std::string & b1, int c1, int d1, int e1)
+{
+  accountno = a1;
+  name = b1;
+  withdraw = c1;
+  deposite = d1;
+  balance = e1;}
+//std::cout<<"Account details:   "<<"\n";
+void bank() override {
+  std::cout << "accountno:" << accountno << "\n";
+  std::cout << "name:" << name << "\n";
+  std::cout << "deposite:" << deposite << "\n";
+  std::cout << "withdraw:" << withdraw << "\n";
+  std::cout << "balance:" << balance << "\n" << "\n" << "\n";
+}
+};
+ class Info:public Bankdetails{
+  public:
+    Info(long int a2, const std::string & b2, int c2, int d2, int e2){
+  accountno = a2;
+  name = b2;
+  withdraw = c2;
+  deposite = d2;
+  balance = e2;}
+//std::cout<<"Account details:   "<<"\n";
+void bank() override {
+  std::cout << "accountno:" << accountno << "\n";
+  std::cout << "name:" << name << "\n";
+  std::cout << "deposite:" << deposite << "\n";
+  std::cout << "withdraw:" << withdraw << "\n";
+  std::cout << "balance:" << balance << "\n" << "\n" << "\n";
+}
+};
+
+
+ class Account:public Bankdetails{
+     public:
+ Account(long int a3, const std::string & b3, int c3, int d3, int e3)
+{
+  accountno = a3;
+  name = b3;
+  withdraw = c3;
+  deposite = d3;
+  balance = e3;
+}
+//std::cout<<"Account details:  "<<"\n";
+void bank() override {
+  std::cout << "accountno:" << accountno << "\n";
+  std::cout << "name:" << name << "\n";
+  std::cout << "deposite:" << deposite << "\n";
+  std::cout << "withdraw:" << withdraw << "\n";
+  std::cout << "balance:" << balance << "\n" << "\n" << "\n";
+}};
+
+
+class Bal:public Bankdetails{
+public:
+Bal(long int a4, const std::string & b4, int c4, int d4, int e4)
+{
+  accountno = a4;
+  name = b4;
+  withdraw = c4;
+  deposite = d4;
+  balance = e4;}
+//std::cout<<"Account details:   "<<"\n";
+void bank() override {
+  std::cout << "accountno:" << accountno << "\n";
+  std::cout << "name:" << name << "\n";
+  std::cout << "deposite:" << deposite << "\n";
+  std::cout << "withdraw:" << withdraw << "\n";
+  std::cout << "balance:" << balance << "\n" << "\n" << "\n";
+}
+};
+
+ int main ()
+{
+
+   // std::cout << "Account details  " << "\n" << "\n";
+      long int a7;
+  std::cout<<"enter a bank no="<<"\n";
+  std::cin>>a7;
+  Bankdetails *ob;
+  Bankdetails ob1;
+  Bank ob2(4500062246,"aruna",5000,10000,5000);
+  Details ob3(4500238759,"abinya",1000,2000,1000);
+  Info ob4(4500879653,"nathiya",1500,1500000,1498500);
+  Account ob5(4500957341,"divya",10000,30000,20000);
+  Bal ob6(4500987651,"karthika",7000000,2000000,5000000);
+  ob= &ob1;
+  ob->bank();
+  
+  if(a7==4500062246){
+  ob= &ob2;
+ob->bank();
+ 
+  }
+   else if(a7==4500238759){
+     //std::cout <<"  ";
+  ob= &ob3;
+  ob->bank();
+  }
+ else if(a7==4500879653){
+ob= &ob4;
+ ob->bank();
+  }
+  else if(a7==4500957341){
+    ob= &ob5;
+     ob->bank();}
+  else if(a7==4500987651){
+  ob= &ob6;
+  ob->bank();
+  }
+else{
+    std::cout<<"invalid account number";
+ }
+  return 0;
+}
